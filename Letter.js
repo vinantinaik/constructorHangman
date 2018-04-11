@@ -1,4 +1,4 @@
-function Letter(chr, hasGuessed) {
+module.exports = function Letter(chr, hasGuessed) {
     this.chr = chr;
     this.hasGuessed = hasGuessed;
 
@@ -14,18 +14,19 @@ function Letter(chr, hasGuessed) {
 
     }
 
+
+
     this.guessLetter = function (guess) {
-        if (guess.trim() === this.chr.trim()) {
+
+        if (guess.toLowerCase() === this.chr.toLowerCase()) {
+
             this.hasGuessed = true;
         }
-        else {
-            this.hasGuessed = false;
-        }
+
+
+
 
     }
 
 }
 
-var myLetter = new Letter("a",false);
-myLetter.guessLetter("k");
-console.log(myLetter.getLetter());
